@@ -81,7 +81,7 @@ nav {
 
 nav a,
 .contact-links a,
-.project-card a {
+.case-study a {
   color: var(--accent-strong);
   font-weight: 700;
   text-decoration-thickness: 0.08em;
@@ -280,8 +280,10 @@ li {
 .metrics,
 .role-grid,
 .experience-list,
+.featured-grid,
 .principles,
-.project-list {
+.case-study-list,
+.resume-grid {
   display: grid;
   gap: 14px;
 }
@@ -292,11 +294,13 @@ li {
 
 .role-grid,
 .experience-list,
-.principles {
+.featured-grid,
+.principles,
+.resume-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.project-list {
+.case-study-list {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
@@ -306,6 +310,13 @@ article {
 
 article p {
   margin-bottom: 0;
+}
+
+.compact-list {
+  display: grid;
+  gap: 8px;
+  margin: 14px 0 0;
+  padding-left: 18px;
 }
 
 .metric {
@@ -321,10 +332,39 @@ article p {
   margin-bottom: 12px;
 }
 
-.project-card {
+.case-study {
   align-content: space-between;
   display: grid;
   gap: 18px;
+}
+
+.case-study dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.case-study dt {
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-study dd {
+  color: var(--muted);
+  margin: 2px 0 0;
+}
+
+.resume-grid article {
+  align-content: space-between;
+  display: grid;
+  gap: 16px;
+}
+
+.resume-grid .button {
+  justify-self: start;
 }
 
 .contact-panel {
@@ -363,9 +403,10 @@ article p {
   nav {
     grid-column: 1 / -1;
     grid-row: 2;
-    gap: 14px;
+    flex-wrap: wrap;
+    font-size: 0.93rem;
+    gap: 10px 13px;
     justify-content: start;
-    overflow-x: auto;
   }
 
   .theme-toggle {
@@ -386,8 +427,10 @@ article p {
   .metrics,
   .role-grid,
   .experience-list,
+  .featured-grid,
   .principles,
-  .project-list {
+  .case-study-list,
+  .resume-grid {
     grid-template-columns: 1fr;
   }
 
@@ -406,6 +449,6 @@ article p {
   }
 
   h1 {
-    font-size: clamp(2.35rem, 15vw, 3.7rem);
+    font-size: clamp(2rem, 12vw, 2.9rem);
   }
 }
