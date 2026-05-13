@@ -11,5 +11,5 @@ BrandedTamarasu-glitch/BrandedTamarasu-glitch.github.io
 Published URL:
 
 ```text
-https://BrandedTamarasu-glitch.github.io
+https://coryebert.com
 ```

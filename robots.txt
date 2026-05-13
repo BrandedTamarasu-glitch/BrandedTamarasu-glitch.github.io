@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brandedtamarasu-glitch.github.io/sitemap.xml
+Sitemap: https://coryebert.com/sitemap.xml
