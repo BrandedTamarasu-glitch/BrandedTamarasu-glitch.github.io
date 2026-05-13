@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "check:a11y": "node scripts/accessibility-check.mjs"
+  }
+}

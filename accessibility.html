@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Accessibility statement for Cory Ebert's portfolio site.">
+    <meta name="author" content="Cory Ebert">
+    <meta property="og:title" content="Accessibility | Cory Ebert">
+    <meta property="og:description" content="Accessibility practices for coryebert.com, including keyboard navigation, contrast, reduced motion, and accessible downloads.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://coryebert.com/accessibility.html">
+    <meta property="og:image" content="https://coryebert.com/assets/cory-ebert-social.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cory Ebert portfolio preview">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Accessibility | Cory Ebert">
+    <meta name="twitter:description" content="Accessibility practices for coryebert.com.">
+    <meta name="twitter:image" content="https://coryebert.com/assets/cory-ebert-social.png">
+    <meta name="twitter:image:alt" content="Cory Ebert portfolio preview">
+    <link rel="canonical" href="https://coryebert.com/accessibility.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <title>Accessibility | Cory Ebert</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"636dcc4cf45b43f1924ba2325f0ba807"}'></script>
+    <script>
+      (function () {
+        var saved = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
+      })();
+    </script>
+    <noscript>
+      <style>
+        .theme-toggle {
+          display: none;
+        }
+      </style>
+    </noscript>
+  </head>
+  <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Cory Ebert home">CE</a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html#snapshot">Snapshot</a>
+        <a href="index.html#proof">Proof</a>
+        <a href="index.html#experience">Experience</a>
+        <a href="index.html#resumes">Resumes</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true"></span>
+        <span class="theme-label">Theme</span>
+      </button>
+    </header>
+
+    <main id="top" tabindex="-1">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Accessibility</p>
+          <h1 id="page-title">Accessibility Statement</h1>
+          <p class="lead">
+            This portfolio is designed to be readable, navigable, and useful for recruiters,
+            hiring teams, and assistive-technology users.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="index.html">Back to Portfolio</a>
+            <a class="button" href="mailto:coryebert@outlook.com">Report an Issue</a>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="commitment-title">
+        <div class="section-heading">
+          <p class="eyebrow">Commitment</p>
+          <h2 id="commitment-title">How This Site Supports Accessibility</h2>
+        </div>
+        <div class="statement-layout">
+          <article>
+            <h3>Current accessibility practices</h3>
+            <ul class="statement-list">
+              <li>Semantic headings, landmarks, and section labels support screen-reader navigation.</li>
+              <li>A skip link allows keyboard users to move directly to the main content.</li>
+              <li>Keyboard focus states are visible across navigation, buttons, links, and controls.</li>
+              <li>Color contrast is tuned for readable text in light and dark themes.</li>
+              <li>The theme toggle exposes its current state to assistive technology.</li>
+              <li>External links and downloadable resume links use descriptive accessible names.</li>
+              <li>Reduced-motion preferences are respected for users who limit animation.</li>
+              <li>The page includes print styles for cleaner recruiter review and offline use.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Known scope</h3>
+            <p>
+              The primary portfolio and downloadable resume files are maintained as static assets.
+              I review the site after significant updates and keep download labels, headings,
+              contrast, focus behavior, and mobile layout in scope for each content pass.
+            </p>
+          </article>
+          <article>
+            <h3>Feedback</h3>
+            <p>
+              If you find an accessibility issue on this site, email
+              <a href="mailto:coryebert@outlook.com">coryebert@outlook.com</a>
+              with the page, browser, assistive technology if applicable, and a short description
+              of the issue.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var button = document.querySelector(".theme-toggle");
+
+        if (!button) {
+          return;
+        }
+
+        function setTheme(theme) {
+          root.dataset.theme = theme;
+          localStorage.setItem("theme", theme);
+          button.setAttribute("aria-label", "Switch to " + (theme === "dark" ? "light" : "dark") + " mode");
+          button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
+        }
+
+        button.addEventListener("click", function () {
+          setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+        });
+
+        setTheme(root.dataset.theme || "light");
+      })();
+    </script>
+  </body>
+</html>
