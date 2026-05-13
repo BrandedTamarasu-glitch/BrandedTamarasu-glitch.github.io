@@ -226,7 +226,7 @@ section {
   padding: 38px 0;
 }
 
-section:nth-of-type(even) {
+main > section:not(.hero) {
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--surface) 74%, transparent), color-mix(in srgb, var(--surface-strong) 48%, transparent));
   border: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
@@ -851,7 +851,7 @@ article p {
     padding: 34px 18px;
   }
 
-  section:nth-of-type(even) {
+  main > section:not(.hero) {
     border-left: 0;
     border-right: 0;
     border-radius: 0;
@@ -917,7 +917,7 @@ article p {
     width: 38px;
   }
 
-  section:nth-of-type(even) {
+  main > section:not(.hero) {
     border-left: 0;
     border-right: 0;
     border-radius: 0;
@@ -1003,7 +1003,7 @@ article p {
   }
 
   section,
-  section:nth-of-type(even) {
+  main > section:not(.hero) {
     background: transparent;
     border: 0;
     break-inside: avoid;
