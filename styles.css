@@ -283,7 +283,8 @@ li {
 .featured-grid,
 .principles,
 .case-study-list,
-.resume-grid {
+.resume-grid,
+.snapshot-grid {
   display: grid;
   gap: 14px;
 }
@@ -296,7 +297,8 @@ li {
 .experience-list,
 .featured-grid,
 .principles,
-.resume-grid {
+.resume-grid,
+.snapshot-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -336,6 +338,15 @@ article p {
   align-content: space-between;
   display: grid;
   gap: 18px;
+}
+
+.case-meta {
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
 }
 
 .case-study dl {
@@ -429,7 +440,8 @@ article p {
   .experience-list,
   .featured-grid,
   .principles,
-  .resume-grid {
+  .resume-grid,
+  .snapshot-grid {
     grid-template-columns: 1fr;
   }
 
