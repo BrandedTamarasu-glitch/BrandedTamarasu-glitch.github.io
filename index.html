@@ -13,10 +13,12 @@
     <meta property="og:image" content="https://coryebert.com/assets/cory-ebert-social.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Cory Ebert portfolio preview">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cory Ebert | Senior TPM and Product Operations Leader">
     <meta name="twitter:description" content="Enterprise systems, hardware services, product operations, and AI workflow leadership.">
     <meta name="twitter:image" content="https://coryebert.com/assets/cory-ebert-social.png">
+    <meta name="twitter:image:alt" content="Cory Ebert portfolio preview">
     <link rel="canonical" href="https://coryebert.com/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Cory Ebert | Senior TPM, Enterprise Systems, Product Operations</title>
@@ -29,6 +31,13 @@
         document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
       })();
     </script>
+    <noscript>
+      <style>
+        .theme-toggle {
+          display: none;
+        }
+      </style>
+    </noscript>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -72,6 +81,7 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header">
       <a class="brand" href="#top" aria-label="Cory Ebert home">CE</a>
       <nav aria-label="Primary navigation">
@@ -82,13 +92,13 @@
         <a href="#resumes">Resumes</a>
         <a href="#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Switch color theme">
+      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
         <span class="theme-icon" aria-hidden="true"></span>
         <span class="theme-label">Theme</span>
       </button>
     </header>
 
-    <main id="top">
+    <main id="top" tabindex="-1">
       <section class="hero" aria-labelledby="page-title">
         <div class="hero-layout">
           <div class="hero-copy">
@@ -108,8 +118,8 @@
             </div>
             <div class="actions" aria-label="Primary links">
               <a class="button primary" href="#resumes">Choose Resume</a>
-              <a class="button" href="https://www.linkedin.com/in/coryebert" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-              <a class="button" href="https://github.com/BrandedTamarasu-glitch" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="button" href="https://www.linkedin.com/in/coryebert" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile, opens in a new tab">LinkedIn</a>
+              <a class="button" href="https://github.com/BrandedTamarasu-glitch" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile, opens in a new tab">GitHub</a>
             </div>
             <div class="hero-strip" aria-label="Role availability summary">
               <span>Remote or Greater Seattle hybrid</span>
@@ -118,7 +128,7 @@
             </div>
           </div>
           <aside class="profile-card" aria-label="Profile summary">
-            <img class="headshot" src="assets/cory-ebert.jpg" alt="Cory Ebert">
+            <img class="headshot" src="assets/cory-ebert.jpg" alt="Cory Ebert" width="800" height="800" decoding="async" fetchpriority="high">
             <div>
               <strong>Corporate Imaging Concepts 2024-Present</strong>
               <span>Enterprise systems, analytics, procurement, internal platforms</span>
@@ -428,7 +438,7 @@
               <span>Developer Tools</span>
               <span>Workflow Governance</span>
             </div>
-            <a href="https://github.com/Corye-CIC/Review_Squad" target="_blank" rel="noopener noreferrer">View project</a>
+            <a href="https://github.com/Corye-CIC/Review_Squad" target="_blank" rel="noopener noreferrer" aria-label="View Review Squad project on GitHub, opens in a new tab">View project</a>
           </article>
           <article class="case-study">
             <div>
@@ -445,7 +455,7 @@
               <span>Scoring Systems</span>
               <span>Automation</span>
             </div>
-            <a href="https://github.com/BrandedTamarasu-glitch/Job-Radar" target="_blank" rel="noopener noreferrer">View project</a>
+            <a href="https://github.com/BrandedTamarasu-glitch/Job-Radar" target="_blank" rel="noopener noreferrer" aria-label="View Job-Radar project on GitHub, opens in a new tab">View project</a>
           </article>
           <article class="case-study">
             <div>
@@ -462,7 +472,7 @@
               <span>Accelerators</span>
               <span>Systems</span>
             </div>
-            <a href="https://github.com/BrandedTamarasu-glitch/OllamaAMDNPU" target="_blank" rel="noopener noreferrer">View project</a>
+            <a href="https://github.com/BrandedTamarasu-glitch/OllamaAMDNPU" target="_blank" rel="noopener noreferrer" aria-label="View llama.cpp AMD XDNA2 NPU Backend project on GitHub, opens in a new tab">View project</a>
           </article>
         </div>
       </section>
@@ -528,12 +538,13 @@
             <p class="eyebrow">Contact</p>
             <h2 id="contact-title">Let’s Talk</h2>
             <p>Best fit: senior TPM, product operations, enterprise systems, AI workflow, and hardware-services leadership roles.</p>
+            <p class="updated-note">Updated May 2026</p>
           </div>
           <div class="contact-links">
             <a href="mailto:coryebert@outlook.com">coryebert@outlook.com</a>
-            <a href="https://www.linkedin.com/in/coryebert" target="_blank" rel="noopener noreferrer">linkedin.com/in/coryebert</a>
-            <a href="assets/cory-ebert.vcf">Download contact card</a>
-            <a href="assets/Cory_Ebert_LinkedIn_General_ATS.pdf">Download resume</a>
+            <a href="https://www.linkedin.com/in/coryebert" target="_blank" rel="noopener noreferrer" aria-label="Cory Ebert LinkedIn profile, opens in a new tab">linkedin.com/in/coryebert</a>
+            <a href="assets/cory-ebert.vcf" aria-label="Download Cory Ebert contact card">Download contact card</a>
+            <a href="assets/Cory_Ebert_LinkedIn_General_ATS.pdf" aria-label="Download Cory Ebert general ATS resume PDF">Download resume</a>
           </div>
         </div>
       </section>
@@ -544,10 +555,15 @@
         var root = document.documentElement;
         var button = document.querySelector(".theme-toggle");
 
+        if (!button) {
+          return;
+        }
+
         function setTheme(theme) {
           root.dataset.theme = theme;
           localStorage.setItem("theme", theme);
           button.setAttribute("aria-label", "Switch to " + (theme === "dark" ? "light" : "dark") + " mode");
+          button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
         }
 
         button.addEventListener("click", function () {
@@ -555,6 +571,41 @@
         });
 
         setTheme(root.dataset.theme || "light");
+      })();
+
+      (function () {
+        var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]'));
+        var sections = navLinks
+          .map(function (link) {
+            return document.querySelector(link.getAttribute("href"));
+          })
+          .filter(Boolean);
+
+        if (!navLinks.length || !sections.length) {
+          return;
+        }
+
+        function updateCurrentSection() {
+          var current = sections[0];
+
+          sections.forEach(function (section) {
+            if (section.getBoundingClientRect().top <= 130) {
+              current = section;
+            }
+          });
+
+          navLinks.forEach(function (link) {
+            if (link.getAttribute("href") === "#" + current.id) {
+              link.setAttribute("aria-current", "location");
+            } else {
+              link.removeAttribute("aria-current");
+            }
+          });
+        }
+
+        window.addEventListener("scroll", updateCurrentSection, { passive: true });
+        window.addEventListener("resize", updateCurrentSection);
+        updateCurrentSection();
       })();
     </script>
   </body>
