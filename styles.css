@@ -533,10 +533,13 @@ li {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.validation-grid,
-.award-list,
 .case-detail-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.validation-grid,
+.award-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .impact-grid article {
@@ -593,6 +596,10 @@ li {
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--accent-soft) 52%, transparent), transparent 58%),
     color-mix(in srgb, var(--surface) 96%, transparent);
+}
+
+.award-list article:first-child {
+  grid-column: 1 / -1;
 }
 
 .case-hero {
@@ -848,6 +855,10 @@ article p {
   .resume-grid,
   .snapshot-grid {
     grid-template-columns: 1fr;
+  }
+
+  .award-list article:first-child {
+    grid-column: auto;
   }
 
   .case-study-list {
