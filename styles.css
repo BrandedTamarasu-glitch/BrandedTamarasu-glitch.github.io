@@ -429,9 +429,12 @@ article p {
   .experience-list,
   .featured-grid,
   .principles,
-  .case-study-list,
   .resume-grid {
     grid-template-columns: 1fr;
+  }
+
+  .case-study-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-links {
@@ -450,5 +453,9 @@ article p {
 
   h1 {
     font-size: clamp(2rem, 12vw, 2.9rem);
+  }
+
+  .case-study-list {
+    grid-template-columns: 1fr;
   }
 }
