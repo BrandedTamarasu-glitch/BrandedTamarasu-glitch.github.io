@@ -275,6 +275,13 @@ li {
   padding-top: 26px;
 }
 
+.section-note {
+  color: var(--text);
+  font-weight: 650;
+  margin: -4px 0 18px;
+  max-width: 760px;
+}
+
 .role-tags,
 .tags,
 .actions,
