@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 
-const files = ["index.html", "accessibility.html"];
+const files = ["index.html", "accessibility.html", "case-study-cic-enterprise-systems.html"];
 const css = readFileSync("styles.css", "utf8");
 const failures = [];
 
