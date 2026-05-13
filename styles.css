@@ -361,12 +361,17 @@ li {
 }
 
 .section-heading {
-  align-items: end;
   border-top: 1px solid var(--line);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: 8px;
   margin-bottom: 18px;
   padding-top: 26px;
+}
+
+.section-heading h2 {
+  justify-self: end;
+  max-width: 820px;
+  text-align: right;
 }
 
 .section-note {
@@ -901,8 +906,12 @@ article p {
 
   .section-heading {
     align-items: start;
-    display: grid;
     gap: 6px;
+  }
+
+  .section-heading h2 {
+    justify-self: start;
+    text-align: left;
   }
 
   .case-study-list {
