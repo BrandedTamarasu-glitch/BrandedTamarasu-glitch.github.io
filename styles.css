@@ -363,13 +363,18 @@ li {
 .section-heading {
   border-top: 1px solid var(--line);
   display: grid;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 16px;
+  margin-bottom: 22px;
   padding-top: 26px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 0;
 }
 
 .section-heading h2 {
   justify-self: end;
+  line-height: 1.14;
   max-width: 820px;
   text-align: right;
 }
@@ -547,6 +552,13 @@ li {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.role-grid,
+.principles,
+.capability-grid,
+.validation-grid {
+  grid-auto-rows: 1fr;
+}
+
 .impact-grid article {
   border-left: 4px solid var(--warm);
   display: grid;
@@ -565,6 +577,11 @@ li {
 
 .capability-grid article {
   min-height: 148px;
+}
+
+.role-grid article,
+.principles article {
+  min-height: 138px;
 }
 
 .testimonial-card {
@@ -594,6 +611,7 @@ li {
 }
 
 .award-list {
+  grid-auto-rows: 1fr;
   margin-top: 14px;
 }
 
@@ -864,6 +882,20 @@ article p {
 
   .award-list article:first-child {
     grid-column: auto;
+  }
+
+  .role-grid,
+  .principles,
+  .capability-grid,
+  .validation-grid,
+  .award-list {
+    grid-auto-rows: auto;
+  }
+
+  .role-grid article,
+  .principles article,
+  .capability-grid article {
+    min-height: auto;
   }
 
   .case-study-list {
