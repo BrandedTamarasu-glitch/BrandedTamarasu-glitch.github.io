@@ -109,6 +109,10 @@ nav {
   justify-content: flex-end;
 }
 
+.desktop-only {
+  display: inline-flex;
+}
+
 nav a,
 .contact-links a,
 .case-study a {
@@ -351,6 +355,32 @@ li {
 
 .recruiter-snapshot article {
   border-top: 4px solid color-mix(in srgb, var(--accent) 72%, var(--warm));
+}
+
+.snapshot-updated {
+  margin: -4px 0 16px;
+}
+
+.tool-strip {
+  align-items: center;
+  background: color-mix(in srgb, var(--surface) 90%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+  padding: 14px;
+}
+
+.tool-strip span {
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--line));
+  border-radius: 999px;
+  color: var(--accent-strong);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 5px 9px;
 }
 
 .role-tags {
@@ -657,6 +687,10 @@ article p {
     font-size: 0.93rem;
     gap: 10px 13px;
     justify-content: start;
+  }
+
+  .desktop-only {
+    display: none;
   }
 
   .theme-toggle {
