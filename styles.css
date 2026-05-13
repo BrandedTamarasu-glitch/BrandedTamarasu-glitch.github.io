@@ -279,6 +279,7 @@ li {
 
 .metrics,
 .role-grid,
+.experience-list,
 .principles,
 .project-list {
   display: grid;
@@ -290,6 +291,7 @@ li {
 }
 
 .role-grid,
+.experience-list,
 .principles {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -361,6 +363,7 @@ article p {
   nav {
     grid-column: 1 / -1;
     grid-row: 2;
+    gap: 14px;
     justify-content: start;
     overflow-x: auto;
   }
@@ -382,6 +385,7 @@ article p {
 
   .metrics,
   .role-grid,
+  .experience-list,
   .principles,
   .project-list {
     grid-template-columns: 1fr;
