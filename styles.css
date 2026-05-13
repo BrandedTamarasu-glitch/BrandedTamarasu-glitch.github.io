@@ -9,7 +9,10 @@
   --accent: #11645f;
   --accent-strong: #0b4542;
   --accent-soft: #dcefeb;
+  --warm: #9b6b2f;
+  --warm-soft: #f2e7d5;
   --shadow: 0 18px 50px rgba(14, 56, 53, 0.11);
+  --shadow-hover: 0 24px 62px rgba(14, 56, 53, 0.16);
 }
 
 :root[data-theme="dark"] {
@@ -23,7 +26,10 @@
   --accent: #6fd2c6;
   --accent-strong: #9ce8df;
   --accent-soft: #193b38;
+  --warm: #e0b778;
+  --warm-soft: #3d3324;
   --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+  --shadow-hover: 0 24px 62px rgba(0, 0, 0, 0.36);
 }
 
 * {
@@ -32,6 +38,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 3px solid var(--warm);
+  outline-offset: 3px;
 }
 
 body {
@@ -86,6 +97,14 @@ nav a,
   font-weight: 700;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.18em;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+nav a:hover,
+.contact-links a:hover,
+.case-study a:hover {
+  color: var(--warm);
+  text-decoration-color: var(--warm);
 }
 
 .theme-toggle {
@@ -118,10 +137,21 @@ main {
 }
 
 section {
-  padding: 38px 0;
+  padding: 42px 0;
+}
+
+section:nth-of-type(even) {
+  background: color-mix(in srgb, var(--surface-strong) 54%, transparent);
+  border: 1px solid color-mix(in srgb, var(--line) 76%, transparent);
+  border-radius: 12px;
+  margin: 10px -18px;
+  padding: 40px 18px;
 }
 
 .hero {
+  background: transparent;
+  border: 0;
+  margin: 0;
   padding-top: 18px;
 }
 
@@ -144,6 +174,19 @@ article,
   border: 1px solid var(--line);
   border-radius: 10px;
   box-shadow: var(--shadow);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+article:hover,
+.profile-card:hover,
+.contact-panel:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
 
 .profile-card {
@@ -234,7 +277,8 @@ li {
 
 .role-tags,
 .tags,
-.actions {
+.actions,
+.hero-strip {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -259,6 +303,31 @@ li {
   margin-top: 28px;
 }
 
+.hero-strip {
+  border-left: 4px solid var(--warm);
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-top: 20px;
+  max-width: 790px;
+  padding-left: 14px;
+}
+
+.hero-strip span {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+}
+
+.hero-strip span::before {
+  background: var(--warm);
+  border-radius: 999px;
+  content: "";
+  display: inline-block;
+  height: 7px;
+  width: 7px;
+}
+
 .button {
   align-items: center;
   background: transparent;
@@ -270,10 +339,28 @@ li {
   min-height: 44px;
   padding: 0 16px;
   text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
 }
 
 .button.primary {
   background: var(--accent);
+  color: var(--bg);
+}
+
+.button:hover {
+  border-color: var(--warm);
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--warm) 18%, transparent);
+  color: var(--warm);
+  transform: translateY(-1px);
+}
+
+.button.primary:hover {
+  background: color-mix(in srgb, var(--accent) 88%, var(--warm));
   color: var(--bg);
 }
 
@@ -307,7 +394,7 @@ li {
 }
 
 article {
-  padding: 18px;
+  padding: 20px;
 }
 
 article p {
@@ -322,7 +409,19 @@ article p {
 }
 
 .metric {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--warm-soft) 22%, transparent), transparent 58%),
+    color-mix(in srgb, var(--surface) 95%, transparent);
   min-height: 150px;
+}
+
+.metric-label {
+  color: var(--warm);
+  font-size: 0.72rem;
+  font-weight: 850;
+  letter-spacing: 0.09em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .metric strong {
@@ -337,34 +436,42 @@ article p {
 .case-study {
   align-content: space-between;
   display: grid;
-  gap: 18px;
+  gap: 16px;
 }
 
 .case-meta {
-  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--warm-soft) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--warm) 38%, var(--line));
+  border-radius: 999px;
+  color: var(--warm);
+  display: inline-flex;
   font-size: 0.74rem;
   font-weight: 800;
-  letter-spacing: 0.08em;
-  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  padding: 4px 8px;
   text-transform: uppercase;
 }
 
 .case-study dl {
   display: grid;
-  gap: 10px;
+  gap: 9px;
   margin: 0;
 }
 
 .case-study dt {
   color: var(--text);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  font-weight: 760;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .case-study dd {
   color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.48;
   margin: 2px 0 0;
 }
 
@@ -431,6 +538,13 @@ article p {
     grid-template-columns: 1fr;
   }
 
+  section:nth-of-type(even) {
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .profile-card {
     max-width: 320px;
   }
@@ -459,6 +573,16 @@ article p {
     padding: 34px 18px 48px;
   }
 
+  section:nth-of-type(even) {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    margin-left: -18px;
+    margin-right: -18px;
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
   .theme-label {
     display: none;
   }
@@ -469,5 +593,74 @@ article p {
 
   .case-study-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  article:hover,
+  .profile-card:hover,
+  .contact-panel:hover,
+  .button:hover {
+    transform: none;
+  }
+}
+
+@media print {
+  :root {
+    color-scheme: light;
+    --bg: #ffffff;
+    --surface: #ffffff;
+    --surface-strong: #ffffff;
+    --text: #111111;
+    --muted: #333333;
+    --line: #bbbbbb;
+    --accent: #0b4542;
+    --accent-strong: #0b4542;
+    --accent-soft: #ffffff;
+    --warm: #6f4a1f;
+    --warm-soft: #ffffff;
+    --shadow: none;
+    --shadow-hover: none;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .site-header,
+  .theme-toggle {
+    display: none;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  section,
+  section:nth-of-type(even) {
+    background: transparent;
+    border: 0;
+    break-inside: avoid;
+    margin: 0;
+    padding: 18px 0;
+  }
+
+  article,
+  .profile-card,
+  .contact-panel {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  a {
+    color: #111111;
   }
 }
