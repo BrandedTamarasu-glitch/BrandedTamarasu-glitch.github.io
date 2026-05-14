@@ -5,6 +5,7 @@ const files = [
   "accessibility.html",
   "case-study-cic-enterprise-systems.html",
   "case-study-surface-repairability.html",
+  "resume.html",
 ];
 const css = readFileSync("styles.css", "utf8");
 const failures = [];
