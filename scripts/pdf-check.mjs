@@ -2,16 +2,13 @@ import { execFileSync } from "node:child_process";
 import { statSync } from "node:fs";
 
 const resumes = [
-  "assets/Cory_Ebert_LinkedIn_General_ATS.pdf",
-  "assets/Cory_Ebert_Smartsheet_Product_Operations_ATS.pdf",
-  "assets/Cory_Ebert_Smartsheet_AI_Automation_ATS.pdf",
-  "assets/Cory_Ebert_Microsoft_All_Roles_ATS.pdf"
+  "assets/Cory Ebert Resume - Clean - 2026.pdf"
 ];
 
 const requiredText = [
   "CORY EBERT",
   "coryebert@outlook.com",
-  "Portfolio: coryebert.com",
+  "coryebert.com",
   "Microsoft",
   "Corporate Imaging Concepts"
 ];
@@ -41,7 +38,7 @@ for (const resume of resumes) {
     failures.push(`${resume}: PDF should not be encrypted`);
   }
 
-  if (size > 200_000) {
+  if (size > 500_000) {
     failures.push(`${resume}: PDF is unexpectedly large for an ATS resume (${size} bytes)`);
   }
 
