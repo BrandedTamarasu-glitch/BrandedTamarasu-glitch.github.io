@@ -27,6 +27,6 @@ Manual review checklist:
 - Keyboard tab through the home page and accessibility page.
 - Confirm the skip link appears on focus and moves focus to main content.
 - Capture desktop and mobile screenshots for layout regressions.
-- Open the resume links and confirm the PDFs load.
+- Open the resume link and confirm the PDF loads.
 - Confirm `pdftotext` output remains readable for ATS compatibility after resume updates.
-- Smoke test production after GitHub Pages deploys: `https://coryebert.com`, `https://coryebert.com/accessibility.html`, and the resume PDF links.
+- Smoke test production after GitHub Pages deploys: `https://coryebert.com`, `https://coryebert.com/accessibility.html`, and the resume PDF link.
