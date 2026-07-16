@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; connect-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="CIC enterprise systems delivery case study for Cory Ebert, covering procurement workflows, analytics, compliance, backlog governance, training, and executive reporting.">
     <meta name="author" content="Cory Ebert">
     <meta property="og:title" content="CIC Enterprise Systems Delivery | Cory Ebert">
@@ -21,25 +23,8 @@
     <link rel="canonical" href="https://coryebert.com/case-study-cic-enterprise-systems.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>CIC Enterprise Systems Delivery | Cory Ebert</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"636dcc4cf45b43f1924ba2325f0ba807"}'></script>
-    <script>
-      (function () {
-        var saved = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
-      })();
-    </script>
-    <noscript>
-      <style>
-        .theme-toggle {
-          display: none;
-        }
-      </style>
-    </noscript>
+    <script src="site.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#top">Skip to main content</a>
@@ -177,28 +162,5 @@
       </section>
     </main>
 
-    <script>
-      (function () {
-        var root = document.documentElement;
-        var button = document.querySelector(".theme-toggle");
-
-        if (!button) {
-          return;
-        }
-
-        function setTheme(theme) {
-          root.dataset.theme = theme;
-          localStorage.setItem("theme", theme);
-          button.setAttribute("aria-label", "Switch to " + (theme === "dark" ? "light" : "dark") + " mode");
-          button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-        }
-
-        button.addEventListener("click", function () {
-          setTheme(root.dataset.theme === "dark" ? "light" : "dark");
-        });
-
-        setTheme(root.dataset.theme || "light");
-      })();
-    </script>
   </body>
 </html>

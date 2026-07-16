@@ -1,3 +1,19 @@
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 100 700;
+  src: url("assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "IBM Plex Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("assets/fonts/ibm-plex-sans-italic-latin.woff2") format("woff2");
+}
+
 :root {
   color-scheme: light;
   --bg: #ebd9c0;
@@ -13,6 +29,8 @@
   --warm: #7a3600;
   --warm-soft: #f5ede0;
   --on-accent: #f8ead7;
+  --focus: #005fcc;
+  --header-focus: #fcd34d;
   --shadow: 0 18px 48px rgba(38, 21, 9, 0.12);
   --shadow-hover: 0 24px 62px rgba(38, 21, 9, 0.18);
 }
@@ -32,6 +50,8 @@
   --warm: #fcd34d;
   --warm-soft: #3d1f0a;
   --on-accent: #1a0a04;
+  --focus: #fcd34d;
+  --header-focus: #fcd34d;
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
   --shadow-hover: 0 24px 62px rgba(0, 0, 0, 0.42);
 }
@@ -45,7 +65,7 @@ html {
 }
 
 :focus-visible {
-  outline: 3px solid var(--warm);
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
 }
 
@@ -99,6 +119,10 @@ body {
   top: 0;
   width: 268px;
   z-index: 10;
+}
+
+.site-header :focus-visible {
+  outline-color: var(--header-focus);
 }
 
 .brand {
@@ -186,7 +210,7 @@ a[target="_blank"]::after {
   border-radius: 999px;
   color: #f5e6d0;
   cursor: pointer;
-  display: inline-flex;
+  display: none;
   font: inherit;
   font-weight: 700;
   gap: 8px;
@@ -196,6 +220,10 @@ a[target="_blank"]::after {
     background-color 160ms ease,
     border-color 160ms ease,
     box-shadow 160ms ease;
+}
+
+.js .theme-toggle {
+  display: inline-flex;
 }
 
 .theme-icon {
@@ -213,9 +241,10 @@ a[target="_blank"]::after {
 }
 
 main {
-  margin: 0 0 0 268px;
+  margin: 0 0 0 max(268px, calc((100vw - 1480px + 268px) / 2));
   max-width: 1480px;
   padding: 34px clamp(24px, 4vw, 64px) 72px;
+  width: calc(100% - 268px);
 }
 
 main:focus {
@@ -273,14 +302,6 @@ article,
 
 .priority-section {
   padding-top: 20px;
-}
-
-article:hover,
-.profile-card:hover,
-.contact-panel:hover {
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-2px);
 }
 
 .profile-card {
@@ -373,10 +394,10 @@ li {
 }
 
 .section-heading h2 {
-  justify-self: end;
+  justify-self: start;
   line-height: 1.14;
   max-width: 820px;
-  text-align: right;
+  text-align: left;
 }
 
 .section-note {
@@ -544,9 +565,16 @@ li {
 .principles,
 .impact-grid,
 .capability-grid,
-.resume-grid,
 .snapshot-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.resume-grid {
+  grid-template-columns: 1fr;
+}
+
+.resume-grid article > p {
+  max-width: 780px;
 }
 
 .case-detail-grid {
@@ -834,6 +862,10 @@ article p {
 }
 
 @media (max-width: 860px) {
+  html {
+    scroll-padding-top: 132px;
+  }
+
   .site-header {
     align-items: center;
     border-bottom: 1px solid var(--line);
@@ -858,10 +890,22 @@ article p {
     flex-direction: row;
     grid-column: 1 / -1;
     grid-row: 2;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-size: 0.93rem;
-    gap: 10px 13px;
+    gap: 4px;
     justify-content: start;
+    margin: 0 -18px;
+    overflow-x: auto;
+    padding: 2px 18px 8px;
+    scrollbar-color: #8a6140 transparent;
+    scrollbar-width: thin;
+    white-space: nowrap;
+  }
+
+  nav a {
+    align-items: center;
+    display: inline-flex;
+    min-height: 44px;
   }
 
   .desktop-only {
@@ -883,6 +927,11 @@ article p {
     margin: 0 auto;
     max-width: 1120px;
     padding: 34px 18px 48px;
+    width: auto;
+  }
+
+  [id] {
+    scroll-margin-top: 132px;
   }
 
   .hero {
@@ -942,7 +991,7 @@ article p {
   }
 
   .case-study-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .contact-links {
@@ -984,14 +1033,6 @@ article p {
     gap: 6px;
   }
 
-  .section-heading h2 {
-    justify-self: start;
-    text-align: left;
-  }
-
-  .case-study-list {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1004,9 +1045,6 @@ article p {
     transition-duration: 0.01ms !important;
   }
 
-  article:hover,
-  .profile-card:hover,
-  .contact-panel:hover,
   .button:hover {
     transform: none;
   }
@@ -1041,17 +1079,24 @@ article p {
   }
 
   main {
+    margin: 0;
     max-width: none;
     padding: 0;
+    width: 100%;
   }
 
   section,
   main > section:not(.hero) {
     background: transparent;
     border: 0;
-    break-inside: avoid;
+    break-inside: auto;
     margin: 0;
     padding: 18px 0;
+  }
+
+  .hero-layout {
+    align-items: start;
+    grid-template-columns: minmax(0, 1fr) 220px;
   }
 
   article,

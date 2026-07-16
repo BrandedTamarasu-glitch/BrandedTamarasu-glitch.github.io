@@ -1,4 +1,5 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 
 const files = [
   "index.html",
@@ -6,6 +7,7 @@ const files = [
   "case-study-cic-enterprise-systems.html",
   "case-study-surface-repairability.html",
   "resume.html",
+  "404.html",
 ];
 const css = readFileSync("styles.css", "utf8");
 const failures = [];
@@ -28,6 +30,27 @@ function attrs(source) {
 
 for (const file of files) {
   const html = readFileSync(file, "utf8");
+
+  if (!/<meta[^>]+http-equiv="Content-Security-Policy"/.test(html)) {
+    fail(`${file}: missing Content Security Policy metadata`);
+  }
+
+  if (/Content-Security-Policy[^>]+unsafe-inline/.test(html)) {
+    fail(`${file}: Content Security Policy should not allow unsafe inline code`);
+  }
+
+  if (!/<meta[^>]+name="referrer"[^>]+content="strict-origin-when-cross-origin"/.test(html)) {
+    fail(`${file}: missing referrer policy metadata`);
+  }
+
+  if (!/<script[^>]+src="\/?site\.js"/.test(html)) {
+    fail(`${file}: missing shared site script`);
+  }
+
+  if (/fonts\.(?:googleapis|gstatic)\.com|static\.cloudflareinsights\.com/.test(html)) {
+    fail(`${file}: third-party font or analytics runtime remains`);
+  }
+
   const ids = [...html.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
 
@@ -76,6 +99,16 @@ for (const file of files) {
     if (!/PDF/.test(linkAttrs["aria-label"] || match[0])) {
       fail(`${file}: PDF link missing PDF context`);
     }
+    if (!Object.hasOwn(linkAttrs, "download")) {
+      fail(`${file}: promised PDF download missing download attribute`);
+    }
+  }
+
+  for (const match of html.matchAll(/<a\s+([^>]*href="[^"]+\.vcf"[^>]*)>/g)) {
+    const linkAttrs = attrs(match[1]);
+    if (!Object.hasOwn(linkAttrs, "download")) {
+      fail(`${file}: contact-card download missing download attribute`);
+    }
   }
 
   for (const match of html.matchAll(/<a\s+([^>]*href="#([^"]+)"[^>]*)>/g)) {
@@ -103,6 +136,52 @@ if (!/@media print/.test(css)) {
 
 if (!/a\[target="_blank"\]::after/.test(css)) {
   fail("styles.css: missing visible external-link affordance");
+}
+
+for (const font of [
+  "assets/fonts/ibm-plex-sans-latin.woff2",
+  "assets/fonts/ibm-plex-sans-italic-latin.woff2",
+  "assets/fonts/LICENSE.txt",
+]) {
+  if (!existsSync(font)) {
+    fail(`${font}: self-hosted font asset is missing`);
+  }
+}
+
+if (!/@font-face[\s\S]+assets\/fonts\/ibm-plex-sans-latin\.woff2/.test(css)) {
+  fail("styles.css: self-hosted IBM Plex Sans is not configured");
+}
+
+if (/article:hover|\.profile-card:hover|\.contact-panel:hover/.test(css)) {
+  fail("styles.css: noninteractive cards should not use hover lift");
+}
+
+if (!/@media print[\s\S]+main\s*\{[^}]*margin:\s*0;[^}]*width:\s*100%/m.test(css)) {
+  fail("styles.css: print layout must reset the desktop main offset");
+}
+
+const home = readFileSync("index.html", "utf8");
+const snapshotPosition = home.indexOf('id="snapshot"');
+const proofPosition = home.indexOf('id="proof"');
+const capabilitiesPosition = home.indexOf('id="capabilities"');
+
+if (!(snapshotPosition < proofPosition && proofPosition < capabilitiesPosition)) {
+  fail("index.html: measured proof must follow the snapshot before capabilities");
+}
+
+if (/impact-title|featured-title/.test(home)) {
+  fail("index.html: redundant impact or highlights section remains");
+}
+
+const structuredData = home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+
+if (!structuredData) {
+  fail("index.html: structured data is missing");
+} else {
+  const structuredDataHash = `sha256-${createHash("sha256").update(structuredData[1]).digest("base64")}`;
+  if (!home.includes(`'${structuredDataHash}'`)) {
+    fail("index.html: CSP does not authorize the current structured-data hash");
+  }
 }
 
 if (failures.length) {

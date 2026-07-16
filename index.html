@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; connect-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self' 'sha256-s3+sjn9kV9IbpGj1FUo9C9nwu8TKcLhU1nZuK7EF3bs='; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="Cory Ebert, MBA: senior TPM and product operations leader for enterprise systems, software platforms, hardware services, procurement workflows, analytics, and AI-augmented operating models.">
     <meta name="keywords" content="Cory Ebert, senior technical program manager, product operations, enterprise systems, software platforms, hardware services, Microsoft Surface, Corporate Imaging Concepts, SAP, Coupa, Power BI, AI workflows">
     <meta name="author" content="Cory Ebert">
@@ -22,25 +24,8 @@
     <link rel="canonical" href="https://coryebert.com/">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <title>Cory Ebert | Senior TPM, Enterprise Systems, Product Operations</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"636dcc4cf45b43f1924ba2325f0ba807"}'></script>
-    <script>
-      (function () {
-        var saved = localStorage.getItem("theme");
-        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-        document.documentElement.dataset.theme = saved || (prefersDark ? "dark" : "light");
-      })();
-    </script>
-    <noscript>
-      <style>
-        .theme-toggle {
-          display: none;
-        }
-      </style>
-    </noscript>
+    <script src="site.js"></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -211,97 +196,6 @@
         </div>
       </section>
 
-      <section id="capabilities" aria-labelledby="capabilities-title">
-        <div class="section-heading">
-          <p class="eyebrow">Capabilities</p>
-          <h2 id="capabilities-title">How I Can Help</h2>
-        </div>
-        <div class="capability-grid">
-          <article>
-            <h3>Program Leadership</h3>
-            <p>Roadmaps, launch readiness, dependency management, risk mitigation, executive reporting, operating rhythms, and decision governance.</p>
-          </article>
-          <article>
-            <h3>Enterprise Systems</h3>
-            <p>SAP, Coupa, procurement workflows, invoicing automation, legacy modernization, data migration, training, and adoption.</p>
-          </article>
-          <article>
-            <h3>Hardware Services</h3>
-            <p>Surface, Xbox, diagnostics, repairability, support operations, partner readiness, supplier execution, and compliance workflows.</p>
-          </article>
-          <article>
-            <h3>Analytics and Metrics</h3>
-            <p>Power BI, Looker Studio, KPI systems, margin intelligence, operational dashboards, backlog visibility, and performance reporting.</p>
-          </article>
-          <article>
-            <h3>AI Workflows</h3>
-            <p>Agentic development workflows, automation patterns, scoring systems, review gates, validation loops, and productivity tooling.</p>
-          </article>
-          <article>
-            <h3>Delivery Tools</h3>
-            <p>Azure DevOps, Smartsheet, React, PostgreSQL, TypeScript, Python, GitHub, vendor systems, and cross-functional operating tools.</p>
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="impact-title">
-        <div class="section-heading">
-          <p class="eyebrow">Impact</p>
-          <h2 id="impact-title">The Work I’m Known For</h2>
-        </div>
-        <div class="impact-grid">
-          <article>
-            <strong>Hardware and Services Programs</strong>
-            <span>Surface, Xbox, support operations, diagnostics, repairability, partner programs, and service strategy at Microsoft scale.</span>
-          </article>
-          <article>
-            <strong>CIC 2024-Present</strong>
-            <span>Enterprise technology programs across client transitions, procurement, analytics, compliance, workflow tooling, and AI enablement.</span>
-          </article>
-          <article>
-            <strong>Software Platform Delivery</strong>
-            <span>Internal SaaS workflow platform, backlog governance, automation rules, audit logging, and multi-tenant data patterns.</span>
-          </article>
-          <article>
-            <strong>$3M+ Savings</strong>
-            <span>Vendor strategy, pricing negotiation, supplier execution, and service-content operating model improvements.</span>
-          </article>
-          <article>
-            <strong>Enterprise Operations Scale</strong>
-            <span>2.6M+ row client transition and 800+ specialist operating models across 83 Microsoft Store locations.</span>
-          </article>
-          <article>
-            <strong>AI Workflow Builder</strong>
-            <span>Hands-on systems for agentic development, job search automation, scoring, review, and delivery governance.</span>
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="featured-title">
-        <div class="section-heading">
-          <p class="eyebrow">Highlights</p>
-          <h2 id="featured-title">Enterprise systems, software platforms, hardware services, and AI workflow delivery</h2>
-        </div>
-        <div class="featured-grid">
-          <article>
-            <h3>Current enterprise technology lead</h3>
-            <p>CIC program leader across the client portfolio and internal platforms, including the wind-down and transition of the company's largest client account.</p>
-          </article>
-          <article>
-            <h3>Hardware-services and support operator</h3>
-            <p>Led Surface repairability, diagnostics, service content, partner programs, and support operations across consumer, commercial, and authorized repair channels.</p>
-          </article>
-          <article>
-            <h3>Hands-on AI workflow builder</h3>
-            <p>Designed agentic development workflows, internal platforms, scoring systems, and automation patterns that connect technical execution to repeatable operating governance.</p>
-          </article>
-          <article>
-            <h3>Enterprise change adoption driver</h3>
-            <p>Turn technical change into repeatable operating practice through stakeholder readiness, training, role standards, launch governance, and executive visibility.</p>
-          </article>
-        </div>
-      </section>
-
       <section id="proof" aria-labelledby="proof-title">
         <div class="section-heading">
           <p class="eyebrow">Results</p>
@@ -337,6 +231,39 @@
             <p class="metric-label">Validation</p>
             <strong>1,200+</strong>
             <span>automated tests across job-source aggregation, parsing, scoring, deduplication, and workflow logic.</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="capabilities" aria-labelledby="capabilities-title">
+        <div class="section-heading">
+          <p class="eyebrow">Capabilities</p>
+          <h2 id="capabilities-title">How I Can Help</h2>
+        </div>
+        <div class="capability-grid">
+          <article>
+            <h3>Program Leadership</h3>
+            <p>Roadmaps, launch readiness, dependency management, risk mitigation, executive reporting, operating rhythms, and decision governance.</p>
+          </article>
+          <article>
+            <h3>Enterprise Systems</h3>
+            <p>SAP, Coupa, procurement workflows, invoicing automation, legacy modernization, data migration, training, and adoption.</p>
+          </article>
+          <article>
+            <h3>Hardware Services</h3>
+            <p>Surface, Xbox, diagnostics, repairability, support operations, partner readiness, supplier execution, and compliance workflows.</p>
+          </article>
+          <article>
+            <h3>Analytics and Metrics</h3>
+            <p>Power BI, Looker Studio, KPI systems, margin intelligence, operational dashboards, backlog visibility, and performance reporting.</p>
+          </article>
+          <article>
+            <h3>AI Workflows</h3>
+            <p>Agentic development workflows, automation patterns, scoring systems, review gates, validation loops, and productivity tooling.</p>
+          </article>
+          <article>
+            <h3>Delivery Tools</h3>
+            <p>Azure DevOps, Smartsheet, React, PostgreSQL, TypeScript, Python, GitHub, vendor systems, and cross-functional operating tools.</p>
           </article>
         </div>
       </section>
@@ -663,7 +590,7 @@
             <p>Enterprise technology, AI automation, operations, analytics, vendor strategy, client delivery, and Microsoft hardware-services leadership.</p>
             <p class="download-meta">Accessible, text-based PDF, 305 KB</p>
             <div class="actions">
-              <a class="button primary" href="assets/Cory Ebert Resume - Clean - 2026.pdf" aria-label="Download Cory Ebert comprehensive resume PDF, 305 KB">Download Resume</a>
+              <a class="button primary" href="assets/Cory Ebert Resume - Clean - 2026.pdf" download aria-label="Download Cory Ebert comprehensive resume PDF, 305 KB">Download Resume</a>
             </div>
           </article>
         </div>
@@ -681,71 +608,13 @@
           <div class="contact-links">
             <a href="mailto:coryebert@outlook.com">coryebert@outlook.com</a>
             <a href="https://www.linkedin.com/in/coryebert" target="_blank" rel="noopener noreferrer" aria-label="Cory Ebert LinkedIn profile, opens in a new tab">linkedin.com/in/coryebert</a>
-            <a href="assets/cory-ebert.vcf" aria-label="Download Cory Ebert contact card">Download contact card</a>
-            <a href="assets/Cory Ebert Resume - Clean - 2026.pdf" aria-label="Download Cory Ebert comprehensive resume PDF">Download resume</a>
+            <a href="assets/cory-ebert.vcf" download aria-label="Download Cory Ebert contact card">Download contact card</a>
+            <a href="assets/Cory Ebert Resume - Clean - 2026.pdf" download aria-label="Download Cory Ebert comprehensive resume PDF">Download resume</a>
             <a href="accessibility.html">Accessibility statement</a>
           </div>
         </div>
       </section>
     </main>
 
-    <script>
-      (function () {
-        var root = document.documentElement;
-        var button = document.querySelector(".theme-toggle");
-
-        if (!button) {
-          return;
-        }
-
-        function setTheme(theme) {
-          root.dataset.theme = theme;
-          localStorage.setItem("theme", theme);
-          button.setAttribute("aria-label", "Switch to " + (theme === "dark" ? "light" : "dark") + " mode");
-          button.setAttribute("aria-pressed", theme === "dark" ? "true" : "false");
-        }
-
-        button.addEventListener("click", function () {
-          setTheme(root.dataset.theme === "dark" ? "light" : "dark");
-        });
-
-        setTheme(root.dataset.theme || "light");
-      })();
-
-      (function () {
-        var navLinks = Array.prototype.slice.call(document.querySelectorAll('nav a[href^="#"]'));
-        var sections = navLinks
-          .map(function (link) {
-            return document.querySelector(link.getAttribute("href"));
-          })
-          .filter(Boolean);
-
-        if (!navLinks.length || !sections.length) {
-          return;
-        }
-
-        function updateCurrentSection() {
-          var current = sections[0];
-
-          sections.forEach(function (section) {
-            if (section.getBoundingClientRect().top <= 130) {
-              current = section;
-            }
-          });
-
-          navLinks.forEach(function (link) {
-            if (link.getAttribute("href") === "#" + current.id) {
-              link.setAttribute("aria-current", "location");
-            } else {
-              link.removeAttribute("aria-current");
-            }
-          });
-        }
-
-        window.addEventListener("scroll", updateCurrentSection, { passive: true });
-        window.addEventListener("resize", updateCurrentSection);
-        updateCurrentSection();
-      })();
-    </script>
   </body>
 </html>
