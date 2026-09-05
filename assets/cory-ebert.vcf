@@ -2,11 +2,12 @@ BEGIN:VCARD
 VERSION:3.0
 FN:Cory Ebert
 N:Ebert;Cory;;;
-TITLE:Senior Technical Program Manager and Product Operations Leader
+TITLE:Director of IT Operations
+ORG:Corporate Imaging Concepts
 EMAIL;TYPE=INTERNET:coryebert@outlook.com
 URL:https://coryebert.com
 URL;TYPE=LinkedIn:https://www.linkedin.com/in/coryebert
 URL;TYPE=GitHub:https://github.com/BrandedTamarasu-glitch
 ADR;TYPE=HOME:;;Stanwood;WA;;;US
-NOTE:Senior TPM, product operations, enterprise systems, AI workflow, and hardware-services leadership.
+NOTE:IT operations\, enterprise technology\, product operations\, and AI automation.
 END:VCARD

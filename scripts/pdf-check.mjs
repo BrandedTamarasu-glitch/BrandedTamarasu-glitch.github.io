@@ -1,16 +1,19 @@
 import { execFileSync } from "node:child_process";
 import { statSync } from "node:fs";
 
-const resumes = [
-  "assets/Cory Ebert Resume - Clean - 2026.pdf"
-];
+const resumes = ["assets/Cory Ebert Resume - Clean - 2026.pdf"];
 
 const requiredText = [
   "CORY EBERT",
   "coryebert@outlook.com",
   "coryebert.com",
   "Microsoft",
-  "Corporate Imaging Concepts"
+  "Corporate Imaging Concepts",
+  "Director of IT Operations",
+  "July 2026",
+  "LEIF",
+  "six employees",
+  "Director of Application Development",
 ];
 
 const failures = [];
@@ -39,11 +42,13 @@ for (const resume of resumes) {
   }
 
   if (size > 500_000) {
-    failures.push(`${resume}: PDF is unexpectedly large for an ATS resume (${size} bytes)`);
+    failures.push(
+      `${resume}: PDF is unexpectedly large for an ATS resume (${size} bytes)`,
+    );
   }
 
   for (const token of requiredText) {
-    if (!text.includes(token)) {
+    if (!text.toLowerCase().includes(token.toLowerCase())) {
       failures.push(`${resume}: extracted text missing "${token}"`);
     }
   }

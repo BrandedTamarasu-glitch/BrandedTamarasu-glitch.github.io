@@ -36,10 +36,16 @@ for (const file of files) {
   }
 
   if (/Content-Security-Policy[^>]+unsafe-inline/.test(html)) {
-    fail(`${file}: Content Security Policy should not allow unsafe inline code`);
+    fail(
+      `${file}: Content Security Policy should not allow unsafe inline code`,
+    );
   }
 
-  if (!/<meta[^>]+name="referrer"[^>]+content="strict-origin-when-cross-origin"/.test(html)) {
+  if (
+    !/<meta[^>]+name="referrer"[^>]+content="strict-origin-when-cross-origin"/.test(
+      html,
+    )
+  ) {
     fail(`${file}: missing referrer policy metadata`);
   }
 
@@ -47,7 +53,11 @@ for (const file of files) {
     fail(`${file}: missing shared site script`);
   }
 
-  if (/fonts\.(?:googleapis|gstatic)\.com|static\.cloudflareinsights\.com/.test(html)) {
+  if (
+    /fonts\.(?:googleapis|gstatic)\.com|static\.cloudflareinsights\.com/.test(
+      html,
+    )
+  ) {
     fail(`${file}: third-party font or analytics runtime remains`);
   }
 
@@ -156,24 +166,58 @@ if (/article:hover|\.profile-card:hover|\.contact-panel:hover/.test(css)) {
   fail("styles.css: noninteractive cards should not use hover lift");
 }
 
-if (!/@media print[\s\S]+main\s*\{[^}]*margin:\s*0;[^}]*width:\s*100%/m.test(css)) {
+if (
+  !/@media print[\s\S]+main\s*\{[^}]*margin:\s*0;[^}]*width:\s*100%/m.test(css)
+) {
   fail("styles.css: print layout must reset the desktop main offset");
 }
 
 const home = readFileSync("index.html", "utf8");
-const snapshotPosition = home.indexOf('id="snapshot"');
-const proofPosition = home.indexOf('id="proof"');
-const capabilitiesPosition = home.indexOf('id="capabilities"');
-
-if (!(snapshotPosition < proofPosition && proofPosition < capabilitiesPosition)) {
-  fail("index.html: measured proof must follow the snapshot before capabilities");
+// Content checks cover the current role without prescribing a homepage layout.
+for (const file of [
+  "index.html",
+  "resume.html",
+  "case-study-cic-enterprise-systems.html",
+]) {
+  const html = readFileSync(file, "utf8");
+  for (const required of [
+    "Director of IT Operations",
+    "LEIF",
+    "six employees",
+    "Director of Application Development",
+  ]) {
+    if (!html.includes(required))
+      fail(`${file}: missing current leadership scope: ${required}`);
+  }
 }
 
-if (/impact-title|featured-title/.test(home)) {
-  fail("index.html: redundant impact or highlights section remains");
+// Check local resources and cross-page anchors, including links used without JavaScript.
+for (const file of files) {
+  const html = readFileSync(file, "utf8");
+  for (const match of html.matchAll(/(?:href|src)="([^"\s][^"]*)"/g)) {
+    const value = match[1];
+    if (/^(?:[a-z]+:|\/\/)/i.test(value)) continue;
+    const [pathname, fragment] = value.split("#");
+    const target =
+      decodeURIComponent(pathname).replace(/^\//, "") ||
+      (value.startsWith("#") ? file : "index.html");
+    if (!existsSync(target)) {
+      fail(`${file}: missing local resource ${target}`);
+      continue;
+    }
+    if (
+      fragment &&
+      target.endsWith(".html") &&
+      !readFileSync(target, "utf8").includes(`id="${fragment}"`)
+    ) {
+      fail(`${file}: unresolved cross-page fragment ${value}`);
+    }
+  }
 }
 
-const structuredData = home.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
+const structuredData = home.match(
+  /<script type="application\/ld\+json">([\s\S]*?)<\/script>/,
+);
 
 if (!structuredData) {
   fail("index.html: structured data is missing");

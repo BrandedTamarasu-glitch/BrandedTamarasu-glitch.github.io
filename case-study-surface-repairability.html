@@ -1,49 +1,87 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; connect-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; upgrade-insecure-requests">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    <meta name="description" content="Surface repairability and Right to Repair case study for Cory Ebert, covering hardware services, diagnostics, supplier delivery, compliance workflows, launch readiness, and measurable support outcomes.">
-    <meta name="author" content="Cory Ebert">
-    <meta property="og:title" content="Surface Repairability and Right to Repair | Cory Ebert">
-    <meta property="og:description" content="Microsoft-scale hardware services case study across Surface repairability, diagnostics, supplier execution, compliance, and launch readiness.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://coryebert.com/case-study-surface-repairability.html">
-    <meta property="og:image" content="https://coryebert.com/assets/cory-ebert-social.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Cory Ebert portfolio preview">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Surface Repairability and Right to Repair | Cory Ebert">
-    <meta name="twitter:description" content="A deeper case study on Surface repairability, diagnostics, supplier delivery, compliance, and hardware-services launch governance.">
-    <meta name="twitter:image" content="https://coryebert.com/assets/cory-ebert-social.png">
-    <meta name="twitter:image:alt" content="Cory Ebert portfolio preview">
-    <link rel="canonical" href="https://coryebert.com/case-study-surface-repairability.html">
-    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; form-action 'self'; object-src 'none'; frame-src 'none'; connect-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self'; script-src 'self'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="description"
+      content="Surface repairability and Right to Repair case study for Cory Ebert, covering hardware services, diagnostics, supplier delivery, compliance workflows, launch readiness, and measurable support outcomes."
+    />
+    <meta name="author" content="Cory Ebert" />
+    <meta
+      property="og:title"
+      content="Surface Repairability and Right to Repair | Cory Ebert"
+    />
+    <meta
+      property="og:description"
+      content="Microsoft-scale hardware services case study across Surface repairability, diagnostics, supplier execution, compliance, and launch readiness."
+    />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://coryebert.com/case-study-surface-repairability.html"
+    />
+    <meta
+      property="og:image"
+      content="https://coryebert.com/assets/cory-ebert-social.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Cory Ebert portfolio preview" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Surface Repairability and Right to Repair | Cory Ebert"
+    />
+    <meta
+      name="twitter:description"
+      content="A deeper case study on Surface repairability, diagnostics, supplier delivery, compliance, and hardware-services launch governance."
+    />
+    <meta
+      name="twitter:image"
+      content="https://coryebert.com/assets/cory-ebert-social.png"
+    />
+    <meta name="twitter:image:alt" content="Cory Ebert portfolio preview" />
+    <link
+      rel="canonical"
+      href="https://coryebert.com/case-study-surface-repairability.html"
+    />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <title>Surface Repairability and Right to Repair | Cory Ebert</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="site.js"></script>
   </head>
-  <body>
+  <body class="detail-page">
     <a class="skip-link" href="#top">Skip to main content</a>
     <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Cory Ebert home">CE</a>
+      <a class="brand" href="/" aria-label="Cory Ebert home"
+        ><span class="brand-mark" aria-hidden="true">ce<span>_</span></span
+        ><span class="brand-name"
+          >Cory Ebert<span>TECHNOLOGY &amp; OPERATIONS</span></span
+        ></a
+      >
       <nav aria-label="Primary navigation">
-        <a href="index.html#snapshot">Snapshot</a>
-        <a href="index.html#proof">Proof</a>
-        <a href="index.html#capabilities">Skills</a>
-        <a href="index.html#experience">Experience</a>
-        <a href="index.html#case-studies" aria-current="location">Cases</a>
-        <a href="index.html#resume">Resume</a>
-        <a href="index.html#contact">Contact</a>
-        <a href="accessibility.html">Accessibility</a>
+        <a href="/#case-studies">Work</a><a href="/#capabilities">Approach</a
+        ><a href="/#experience">About</a><a href="/#contact">Contact</a>
       </nav>
-      <button class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
-        <span class="theme-icon" aria-hidden="true"></span>
-        <span class="theme-label">Theme</span>
-      </button>
+      <div class="header-actions">
+        <a class="resume-link" href="/resume.html"
+          >Resume <span aria-hidden="true">↗</span></a
+        ><button
+          class="theme-toggle"
+          hidden
+          type="button"
+          aria-label="Switch to light mode"
+          aria-pressed="false"
+        >
+          <span class="theme-icon" aria-hidden="true">◐</span>
+        </button>
+      </div>
     </header>
 
     <main id="top" tabindex="-1">
@@ -52,9 +90,10 @@
           <p class="eyebrow">Case Study</p>
           <h1 id="page-title">Surface Repairability and Right to Repair</h1>
           <p class="lead">
-            Microsoft-scale hardware services leadership across Surface repairability,
-            diagnostics, supplier delivery, service content, compliance workflows,
-            partner readiness, budget reporting, and technical launch governance.
+            Microsoft-scale hardware services leadership across Surface
+            repairability, diagnostics, supplier delivery, service content,
+            compliance workflows, partner readiness, budget reporting, and
+            technical launch governance.
           </p>
           <div class="role-tags" aria-label="Case study focus areas">
             <span>Surface</span>
@@ -64,7 +103,9 @@
             <span>Supplier Delivery</span>
           </div>
           <div class="actions">
-            <a class="button primary" href="index.html#case-studies">Back to Case Studies</a>
+            <a class="button primary" href="index.html#case-studies"
+              >Back to Case Studies</a
+            >
             <a class="button" href="index.html#resume">View Resume</a>
           </div>
         </div>
@@ -78,15 +119,27 @@
         <div class="case-detail-grid">
           <article>
             <h3>Business Environment</h3>
-            <p>Surface repairability work required coordination across engineering, support operations, suppliers, authorized repair partners, legal, safety, finance, and launch stakeholders.</p>
+            <p>
+              Surface repairability work required coordination across
+              engineering, support operations, suppliers, authorized repair
+              partners, legal, safety, finance, and launch stakeholders.
+            </p>
           </article>
           <article>
             <h3>Program Challenge</h3>
-            <p>Repair content, diagnostics, supplier deliverables, partner readiness, and compliance requirements had to land together for product launches and Right to Repair commitments.</p>
+            <p>
+              Repair content, diagnostics, supplier deliverables, partner
+              readiness, and compliance requirements had to land together for
+              product launches and Right to Repair commitments.
+            </p>
           </article>
           <article>
             <h3>Operating Scope</h3>
-            <p>Surface repairability content, diagnostic readiness, RFP and vendor execution, budget tracking, export-control workflows, partner programs, and service launch readiness.</p>
+            <p>
+              Surface repairability content, diagnostic readiness, RFP and
+              vendor execution, budget tracking, export-control workflows,
+              partner programs, and service launch readiness.
+            </p>
           </article>
         </div>
       </section>
@@ -99,19 +152,34 @@
         <div class="case-detail-grid">
           <article>
             <h3>Launch Readiness</h3>
-            <p>Connected product, service, support, and partner milestones so repairability work could move with hardware launch timelines.</p>
+            <p>
+              Connected product, service, support, and partner milestones so
+              repairability work could move with hardware launch timelines.
+            </p>
           </article>
           <article>
             <h3>Supplier and Vendor Execution</h3>
-            <p>Owned RFP and vendor delivery patterns that reduced cost, improved production timelines, and created more scalable service-content execution.</p>
+            <p>
+              Owned RFP and vendor delivery patterns that reduced cost, improved
+              production timelines, and created more scalable service-content
+              execution.
+            </p>
           </article>
           <article>
             <h3>Compliance Coordination</h3>
-            <p>Managed legal, safety, supplier, partner, export-control, and Right to Repair sign-off paths across complex cross-functional dependencies.</p>
+            <p>
+              Managed legal, safety, supplier, partner, export-control, and
+              Right to Repair sign-off paths across complex cross-functional
+              dependencies.
+            </p>
           </article>
           <article>
             <h3>Diagnostics and Service Quality</h3>
-            <p>Connected diagnostic tooling, repair content, quality standards, partner readiness, and feedback loops to improve repair execution and customer outcomes.</p>
+            <p>
+              Connected diagnostic tooling, repair content, quality standards,
+              partner readiness, and feedback loops to improve repair execution
+              and customer outcomes.
+            </p>
           </article>
         </div>
       </section>
@@ -125,17 +193,26 @@
           <article class="metric">
             <p class="metric-label">Savings</p>
             <strong>$3M+</strong>
-            <span>operational savings through vendor strategy, pricing negotiation, supplier execution, and service-content improvements.</span>
+            <span
+              >operational savings through vendor strategy, pricing negotiation,
+              supplier execution, and service-content improvements.</span
+            >
           </article>
           <article class="metric">
             <p class="metric-label">Cost Reduction</p>
             <strong>80%</strong>
-            <span>lower cost versus internal options through external vendor strategy and execution model improvements.</span>
+            <span
+              >lower cost versus internal options through external vendor
+              strategy and execution model improvements.</span
+            >
           </article>
           <article class="metric">
             <p class="metric-label">Speed</p>
             <strong>60%</strong>
-            <span>faster content production timelines through clearer ownership, supplier delivery, and operating-model improvements.</span>
+            <span
+              >faster content production timelines through clearer ownership,
+              supplier delivery, and operating-model improvements.</span
+            >
           </article>
         </div>
       </section>
@@ -148,19 +225,40 @@
         <div class="principles">
           <article>
             <h3>Hardware and service fluency</h3>
-            <p>Ability to operate across product engineering, repair operations, diagnostics, support channels, and partner execution.</p>
+            <p>
+              Ability to operate across product engineering, repair operations,
+              diagnostics, support channels, and partner execution.
+            </p>
           </article>
           <article>
             <h3>Regulated program delivery</h3>
-            <p>Experience coordinating legal, safety, export-control, supplier, and partner requirements without losing launch momentum.</p>
+            <p>
+              Experience coordinating legal, safety, export-control, supplier,
+              and partner requirements without losing launch momentum.
+            </p>
           </article>
           <article>
             <h3>Cost and execution discipline</h3>
-            <p>Focus on measurable outcomes, budget visibility, vendor strategy, and scalable operating models for complex technical programs.</p>
+            <p>
+              Focus on measurable outcomes, budget visibility, vendor strategy,
+              and scalable operating models for complex technical programs.
+            </p>
           </article>
         </div>
       </section>
     </main>
 
+    <footer class="site-footer">
+      <a href="/" class="footer-name"
+        >Cory Ebert<span aria-hidden="true">_</span></a
+      >
+      <p>Technology. People. Progress.</p>
+      <div>
+        <a href="/accessibility.html">Accessibility</a
+        ><a href="https://github.com/BrandedTamarasu-glitch"
+          >GitHub <span aria-hidden="true">↗</span></a
+        ><a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
   </body>
 </html>
