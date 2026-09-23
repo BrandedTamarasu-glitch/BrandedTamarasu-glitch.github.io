@@ -631,8 +631,10 @@ main > .proof-strip {
   border-bottom: 1px solid var(--line);
 }
 .project-pair .project {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 2;
+  row-gap: 0;
 }
 .project-pair .project-copy {
   display: flex;
