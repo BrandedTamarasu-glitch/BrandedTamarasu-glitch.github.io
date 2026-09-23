@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "Barlow Semi Condensed";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("assets/fonts/barlow-semi-condensed-semibold.ttf") format("truetype");
+}
+@font-face {
   font-family: "IBM Plex Sans";
   font-style: normal;
   font-weight: 100 700;
@@ -798,26 +805,32 @@ main > .proof-strip {
 .ai-art {
   background: radial-gradient(
     ellipse at 50% 60%,
-    #243228 0%,
-    #13211c 60%,
-    #111a16 100%
+    #493020 0%,
+    #241c17 60%,
+    #171413 100%
   );
 }
 .ai-art .art-label,
 .ai-art .art-bottom {
-  color: #acbdaa;
+  color: #bfb0a2;
 }
 .flow-visual {
   padding: 35px 0;
   text-align: center;
 }
 .flow-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  font-family: "Barlow Semi Condensed", "IBM Plex Sans", sans-serif;
+  font-weight: 600;
   font-size: 2.6rem;
-  letter-spacing: -0.05em;
-  color: #e1ecdf;
+  letter-spacing: -0.02em;
+  color: #f6efe6;
 }
-.flow-title > span {
-  color: #c1f17d;
+.flow-wordmark > span {
+  color: #f2a366;
 }
 .flow-nodes {
   display: flex;
@@ -829,30 +842,50 @@ main > .proof-strip {
 .flow-nodes > span {
   font: 9px var(--mono);
   padding: 11px 14px;
-  color: #d0e0c6;
-  border: 1px solid #52634c;
+  color: #edddc8;
+  border: 1px solid #78573d;
   border-radius: 3px;
-  background: #213022;
+  background: #2b211b;
 }
 .flow-nodes > span:last-child {
-  color: #c1f17d;
-  border-color: #c1f17d;
+  color: #f2a366;
+  border-color: #f2a366;
 }
 .flow-nodes i {
-  color: #78986a;
+  color: #c28a60;
   font-style: normal;
 }
 .flow-branches {
   display: flex;
   justify-content: center;
   gap: 24px;
-  color: #acbdaa;
+  color: #bfb0a2;
   font: 8px var(--mono);
   margin-top: 24px;
 }
 .flow-branches span {
-  border-top: 1px solid #52634c;
+  border-top: 1px solid #78573d;
   padding-top: 8px;
+}
+.flow-title img {
+  width: 56px;
+  height: 60px;
+  flex: none;
+}
+.forgeflow-project {
+  --accent: #f2a366;
+}
+:root[data-theme="light"] .forgeflow-project {
+  --accent: #9a4817;
+}
+.ai-art .art-bottom > span:last-child {
+  color: #f2a366;
+}
+.forgeflow-link {
+  color: var(--accent);
+}
+.forgeflow-link:hover {
+  text-decoration: underline;
 }
 .more-work {
   margin-top: 48px;
