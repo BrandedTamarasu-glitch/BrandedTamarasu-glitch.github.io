@@ -18,7 +18,7 @@ The site uses a terracotta and deep teal editorial identity, a light theme with 
 - `case-study-*.html`: detailed CIC and Microsoft program evidence.
 - `resume.html`: current comprehensive resume and print layout; source for the downloadable PDF.
 - `styles.css`: theme tokens, shared components, responsive layouts, reduced motion, and print rules.
-- `site.js`: optional theme persistence, interactive approach diagram, and active navigation.
+- `site.js`: optional theme persistence and active navigation.
 - `assets/`: portrait, tagged PDF, contact card, social preview, and licensed fonts.
 
 Director of IT Operations is current from July 2026. CIC's IT Program Manager role runs November 2024–July 2026. The current scope is six employees across SAP, LEIF, Infrastructure, and Security; shared IT budget and strategy with the Director of Application Development; department co-leadership reporting directly to the CEO. These details come from the supplied Profile.pdf and Cory's clarification. The profile's outdated summary was not copied into current-role copy.
@@ -36,7 +36,7 @@ When editing homepage JSON-LD, update its SHA-256 authorization in the Content S
 Before publishing:
 
 - Review all pages in both themes and narrow/mobile layouts.
-- Test keyboard navigation, the skip link, diagram controls, theme persistence, and reduced motion.
+- Test keyboard navigation, the skip link, theme persistence, and reduced motion.
 - Verify navigation and reading remain usable with JavaScript disabled.
 - Generate a tagged PDF from the resume's print layout and run the checks.
 - Check desktop/mobile screenshots and downloadable assets.
