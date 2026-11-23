@@ -12,7 +12,7 @@ Open http://127.0.0.1:4173. Use an HTTP server so root-relative navigation and t
 
 ## Design and content
 
-The September 2026 redesign uses a graphite and lime technical identity, a light theme, original HTML/CSS/SVG project diagrams, and a shared stylesheet and script across all six pages. No build step, third-party runtime requests, or production dependencies are required. IBM Plex Sans is self-hosted.
+The site uses a terracotta and deep teal editorial identity, a light theme with a dark option, original HTML/CSS/SVG project diagrams, and a shared stylesheet and script across all six pages. No build step, third-party runtime requests, or production dependencies are required. IBM Plex Sans is self-hosted.
 
 - `index.html`: introduction, selected work, approach, career progression, and contact.
 - `case-study-*.html`: detailed CIC and Microsoft program evidence.

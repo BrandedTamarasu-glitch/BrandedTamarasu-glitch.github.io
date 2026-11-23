@@ -7,7 +7,7 @@
   } catch (_) {
     /* Storage is optional. */
   }
-  root.dataset.theme = savedTheme === "light" ? "light" : "dark";
+  root.dataset.theme = savedTheme === "dark" ? "dark" : "light";
 
   function initializeSite() {
     var toggle = document.querySelector(".theme-toggle");
