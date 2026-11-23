@@ -1987,6 +1987,41 @@ a[target="_blank"]::after {
     font-size: 0.88rem;
   }
 }
+/* Screen typography: keep primary reading and navigation comfortable at every width. */
+@media screen {
+  .brand-name { font-size: 1rem; }
+  .brand-name > span { font-size: .625rem; letter-spacing: .07em; }
+  .site-header nav a, .resume-link { font-size: .9375rem; }
+  .eyebrow, .home-hero .eyebrow, .proof-intro span,
+  .project-copy .eyebrow, .approach-number, .metric-label { font-size: .75rem; }
+  .location { font-size: .75rem; }
+  .button, .text-link { font-size: .9375rem; }
+  .proof-strip > div > span:not(.eyebrow), .project-result > span,
+  .more-work small, .career-row p, .quote-section footer span,
+  .metric > span, .site-footer p, .site-footer > div > a { font-size: .875rem; }
+  .section-heading > p, .project-copy > p:not(.eyebrow),
+  .approach-grid p, .about-copy > p, .detail-page article p,
+  .statement-list, .resume-document > p, .resume-document ul,
+  .resume-document li, .hero-strip, .role-scope { font-size: 1rem !important; }
+  .career-row > .mono, .tags span, .role-tags span,
+  .approach-grid .tool-line, .more-work .mono, .updated-note,
+  .about-aside-foot { font-size: .8125rem; }
+  .career-row h3 { font-size: 1.0625rem; }
+  .portrait-caption span { font-size: .875rem; }
+  .portrait-caption .portrait-label { font-size: .75rem; }
+  .home-hero .lead { font-size: 1.2rem; }
+  .home-hero .hero-detail { font-size: 1rem; }
+}
+@media screen and (max-width: 580px) {
+  .site-header nav a, .resume-link { font-size: .875rem; }
+  .brand-name > span { font-size: .625rem; }
+  .home-hero .eyebrow { font-size: .75rem; }
+  .home-hero .lead { font-size: 1.0625rem; }
+  .home-hero .hero-detail { font-size: 1rem; }
+  .location { font-size: .75rem; }
+  .career-row { grid-template-columns: 105px 1fr; gap: 14px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
